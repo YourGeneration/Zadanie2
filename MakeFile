@@ -2,8 +2,12 @@ CC = gcc
 CFLAGS = -g
 
 .PHONY: clear
+.SUFFIXES: .h .o .c .a .so 
 
-Code2: Code2.o libpole.a libobjetosc.so
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+
+.o:
 	$(CC) $(CFLAGS) -o $@ $^ -Wl,-rpath,.
 
 Code2.o: Code2.c
