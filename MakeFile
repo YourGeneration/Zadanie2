@@ -4,26 +4,30 @@ CFLAGS = -g
 .PHONY: clear
 .SUFFIXES: .h .o .c .a .so 
 
-.c.o:
-	$(CC) $(CFLAGS) -c $<
-
-.o:
+%: %.o
 	$(CC) $(CFLAGS) -o $@ $^ -Wl,-rpath,.
 
-Code2.o: Code2.c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $^
 
-libpole.a: pole.o
+lib%.a: %.o
 	ar rs $@ $<
 
-libobjetosc.so: objetosc.o
+lib%.so: %.o
 	$(CC) $(CFLAGS) -shared -o $@ $<
 
-pole.o: pole.c
+%S.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
-objetosc.o: objetosc.c
+%D.o: %.c
 	$(CC) $(CFLAGS) -c -fPIC $<
+
+Code2: Code2.o libpole.a libobjetosc.so
+Code2.o: Code2.c
+libpole.a: pole.o
+libobjetosc.so: objetosc.o
+poleS.o: pole.c
+objetoscD.o: objetosc.c
 
 clear:
 	rm -f *.o *.a *.so Code2
