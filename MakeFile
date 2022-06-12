@@ -1,0 +1,22 @@
+.PHONY: clear
+
+Code2: Code2.o libpole.a libobjetosc.so
+	gcc -o Code2 Code2.o libpole.a libobjetosc.so -Wl,-rpath,.
+
+Code2.o: Code2.c
+	gcc -c Code2.c
+
+libpole.a: pole.o
+	ar rs libpole.a pole.o
+
+libobjetosc.so: objetosc.o
+	gcc -shared -o libobjetosc.so objetosc.o
+
+pole.o: pole.c
+	gcc -c pole.c
+
+objetosc.o: objetosc.c
+	gcc -c -fPIC objetosc.c
+
+clear:
+	rm -f *.o *.a *.so Code2
