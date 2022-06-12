@@ -9,13 +9,13 @@ Laboratorium - Wstęp do systemów operacyjnych
 ## Informacje Ogólne
 * Należy napisać program Code2 pozwalający na obliczanie pola kwadratu oraz objętości
 sześcianu.
-** [Code2](https://github.com/YourGeneration/Zadanie2/blob/main/Code2.c)
+[Code2](https://github.com/YourGeneration/Zadanie2/blob/main/Code2.c)
 * Jako dane wejściowe do metod proszę przyjąć wszystkie niezbędne informacje – długości boków,
 wysokości.
 * Funkcje liczące pola i objętości powinny być dwoma niezależnymi plikami (proponuje z dwoma
 plikami nagłówkowymi).
-** [pole.h](https://github.com/YourGeneration/Zadanie2/blob/main/pole.h), [pole.c](https://github.com/YourGeneration/Zadanie2/blob/main/pole.c)
-** [objetosc.h](https://github.com/YourGeneration/Zadanie2/blob/main/objetosc.h), [objetosc.c](https://github.com/YourGeneration/Zadanie2/blob/main/objetosc.c)
+[pole.h](https://github.com/YourGeneration/Zadanie2/blob/main/pole.h), [pole.c](https://github.com/YourGeneration/Zadanie2/blob/main/pole.c)
+[objetosc.h](https://github.com/YourGeneration/Zadanie2/blob/main/objetosc.h), [objetosc.c](https://github.com/YourGeneration/Zadanie2/blob/main/objetosc.c)
 
 Należy opracować plik Makefile, który pozwoli na kompilację, instalację i usunięcie programu
 Code2. Obliczanie powierzchni powinno być realizowane w bibliotece statycznej a obliczanie
@@ -33,11 +33,11 @@ Kompilacja:
 
 ```
 $ make -f MakeFile
-
+```
 Uruchamianie:
 
 ```
 $ ./Code2
-
+```
 ## Autor
 Beata Podgórska
